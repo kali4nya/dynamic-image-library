@@ -1,0 +1,29 @@
+.uploadBorder{
+    width: 35vw; /* Set the width of the rectangle */
+    height: 25vh; /* Set the height of the rectangle */
+    background-color: transparent; /* Set a background color */
+    border: 3px dashed #777777; /* Set a solid border with a green color */
+    border-radius: 10px; /* Optional: make rounded corners */
+    margin: 20px; /* Optional: give some spacing around the rectangle */
+    font-family: "Titillium Web", serif;
+    color: #666666;
+    font-size: clamp(100%, 1.7vw, 50px);
+    font-weight: 600;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+}
+
+.uploadBorder:hover {
+    background-color: transparent;  /* Change background color on hover */
+    border-color: #aaaaaa;      /* Change border color on hover */
+    color: #aaaaaa;
+}
+
+.uplaodCentring{
+    display: flex;
+    justify-content: center;  /* Horizontally center */
+    align-items: center;      /* Vertically center */
+    margin: 0;
+}
