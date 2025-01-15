@@ -1,5 +1,6 @@
 body {
     background-color: #1c1c1c;
+    min-height: 100dvh;
 }
 
 .top-bar {
@@ -18,7 +19,7 @@ body {
     padding: 8px 16px;
 }
 
-.top-bar a:hover {
+.ahover:hover{
     background-color: #ddd;
     color: black;
 }
@@ -28,9 +29,27 @@ body {
     font-weight: 700;
 }
 
-.nav-links{
+.nav-links {
     font-size: clamp(100%, 1.5vw, 50px);
     font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    margin-right: 16px;  /* Space out the links */
+}
+
+.social-link img {
+    width: 3vw;
+    height: 3vw;
+    object-fit: cover;
+    margin-right: 16px;  /* Space out from other links */
+    transition: transform 0.2s;  /* Reduce transition time */
+}
+
+.social-link img:hover {
+    transform: scale(1.05);  /* Smaller hover effect */
 }
 
 .welcome {
@@ -40,19 +59,21 @@ body {
     align-items: center;
     text-align: center;
 }
+
 .welcome a {
-    color: #f0a3d9;
+    color: #e872c5;
     font-family: "Titillium Web", serif;
     font-size: clamp(100%, 1.7vw, 50px);
-    text-decoration: underline; 
+    text-decoration: underline;
     font-weight: 700;
 }
 
-.welcomeTips{
+.welcomeTips {
     display: inline-block;
-    color: #aecfe6;
+    color: #88bee3;
 }
+
 .welcomeTips h3 {
     display: inline;
     font-size: clamp(100%, 1.7vw, 50px);  /* Make the h2 elements inline */
-  }
+}

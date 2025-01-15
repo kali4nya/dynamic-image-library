@@ -1,6 +1,6 @@
-.uploadBorder{
+.uploadBorder {
     width: 35vw; /* Set the width of the rectangle */
-    height: 25vh; /* Set the height of the rectangle */
+    height: 27vh; /* Set the height of the rectangle */
     background-color: transparent; /* Set a background color */
     border: 3px dashed #777777; /* Set a solid border with a green color */
     border-radius: 10px; /* Optional: make rounded corners */
@@ -13,6 +13,9 @@
     justify-content: center;
     align-content: center;
     display: flex;
+    cursor: pointer;
+    transition: 0.15s;
+    user-select: none;
 }
 
 .uploadBorder:hover {
@@ -21,9 +24,87 @@
     color: #aaaaaa;
 }
 
-.uplaodCentring{
+.uplaodCentring {
     display: flex;
-    justify-content: center;  /* Horizontally center */
-    align-items: center;      /* Vertically center */
+    flex-direction: column;  /* Stack the drop area and error banner vertically */
+    align-items: center;     /* Horizontally center everything inside */
     margin: 0;
+}
+
+#drop-area.highlight {
+    background-color: #3a423a;
+    border-color: #329b32;
+}
+
+/* Notification banner styling */
+#message-banner {
+    margin-top: 10px;  /* Adds space between the drop area and the banner */
+    padding: 10px;
+    color: white;
+    background-color: transparent;  /* Initially set to transparent */
+    border-radius: 5px;
+    font-size: 19px;
+    font-family: "Titillium Web", serif;
+    font-weight: 600;
+    width: 16vw;  /* Match the width of the drop area */
+    text-align: center;  /* Center the text in the banner */
+    display: none;  /* Initially hide the banner */
+    /* Transition for smooth fade-in and fade-out effects */
+    opacity: 0;
+    transform: translateY(-10px);  /* Optional: small slide effect */
+    transition: opacity 0.3s ease-in, transform 0.3s ease-in;  /* Quick transition for appearance */
+}
+/* Error state styling */
+#message-banner.error {
+    background-color:  rgb(173, 37, 37);  /* Red background for error */
+}
+/* Success state styling */
+#message-banner.success {
+    background-color: rgb(47, 129, 47);  /* Green background for success */
+}
+#message-banner.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+#message-banner.hidden {
+    opacity: 0;
+    transform: translateY(10px);  /* Optional: Slide it down while fading out */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;  /* Longer transition for disappearance */
+}
+
+#preview-area {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.preview-img {
+    max-width: 150px;
+    margin: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* Styling for the confirmation button */
+.confirm-upload-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: auto;
+}
+
+.confirm-upload-btn:hover {
+    background-color: #45a049;
+}
+
+#preview-area-wraper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 70%;
 }
