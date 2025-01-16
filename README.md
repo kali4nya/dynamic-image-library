@@ -1,4 +1,4 @@
-A very simple image library frame made with plain html, css and javaScript on Flask
+A very simple image library frame made with plain html, css and javaScript hosted on Flask
 Supported formats: **.png, .jpg, .jpeg, .gif, .bmp, .webp, .mkv, .mp4**
 Although displaying video formats doesn't work for now, also the searching doesn't work yet
 I have plans to eventually fix those issue and add support for tagging pictures
