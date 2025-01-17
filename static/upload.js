@@ -82,17 +82,38 @@ function handleFiles(files) {
         return;
     }
 
+    // Allowed image extensions
+    const allowedExtensionsImage = ['.png', '.jpg', '.jpeg', '.gif', '.webp', '.bmp'];
+    const allowedExtensionsVideo = ['.mp4', '.webm'];
+
     // Display previews
     passedFiles.forEach(file => {
-        let reader = new FileReader();
-        reader.onload = function (e) {
-            let img = document.createElement('img');
-            img.src = e.target.result;
-            img.classList.add('preview-img');
-            previewArea.appendChild(img);
-        };
-        reader.readAsDataURL(file);
+        let fileName = file.name.toLowerCase();
+        let isImage = allowedExtensionsImage.some(ext => fileName.endsWith(ext));
+        let isVideo = allowedExtensionsVideo.some(ext => fileName.endsWith(ext));
+
+        if (isImage) {
+            let reader = new FileReader();
+            reader.onload = function (e) {
+                let img = document.createElement('img');
+                img.src = e.target.result;
+                img.classList.add('preview-img');
+                previewArea.appendChild(img);
+            };
+            reader.readAsDataURL(file);
+        }
+        else if (isVideo) {
+            let reader = new FileReader();
+            reader.onload = function (e) {
+                let video = document.createElement('video');
+                video.src = e.target.result;
+                video.classList.add('preview-video');
+                previewArea.appendChild(video);
+            };
+            reader.readAsDataURL(file);
+        }
     });
+
 
     // Show confirmation button
     if (passedFiles.length > 0) {
@@ -111,7 +132,7 @@ function handleFiles(files) {
 
 // Check if file is allowed based on its extension
 function allowedFile(file) {
-    const ALLOWED_EXTENSIONS = ['png', 'jpg', 'jpeg', 'gif', 'bmp', 'webp', 'mkv', 'mp4'];
+    const ALLOWED_EXTENSIONS = ['png', 'jpg', 'jpeg', 'gif', 'bmp', 'webp', 'mp4', '.webm'];
     const fileExtension = file.name.split('.').pop().toLowerCase();
     return ALLOWED_EXTENSIONS.includes(fileExtension);
 }

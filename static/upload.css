@@ -86,6 +86,14 @@
     object-fit: cover;
 }
 
+.preview-video {
+    max-width: 150px;
+    margin: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
 /* Styling for the confirmation button */
 .confirm-upload-btn {
     background-color: #4CAF50;

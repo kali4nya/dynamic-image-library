@@ -38,13 +38,22 @@
             </form>
         </div>
           
-        <div class="image-gallery-wraper">
+        <div class="image-gallery-wraper"> 
             <div class="image-gallery">
-                {% for image in images %}
-                    <img src="{{ url_for('serve_image', filename=image) }}" 
-                         alt="{{ image }}" 
-                         class="gallery-image" 
-                         onclick="openImagePreview('{{ url_for('serve_image', filename=image) }}', '{{ image }}')">
+                {% for media in images %}
+                    {% if media.endswith(('.png', '.jpg', '.jpeg', '.gif', '.webp', '.bmp')) %}
+                        <img src="{{ url_for('serve_image', filename=media) }}" 
+                            alt="{{ media }}" 
+                            class="gallery-image" 
+                            onclick="openImagePreview('{{ url_for('serve_image', filename=media) }}', '{{ media }}')">
+                    {% elif media.endswith(('.mp4', '.webm')) %}
+                        <video src="{{ url_for('serve_image', filename=media) }}" 
+                            alt="{{ media }}" 
+                            class="gallery-image"
+                            controls
+                            onclick="openImagePreview('{{ url_for('serve_image', filename=media) }}', '{{ media }}')">
+                        </video>
+                    {% endif %}
                 {% endfor %}
             </div>
         </div>

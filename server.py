@@ -9,7 +9,7 @@ app.secret_key = 'supersecretkey'  # Needed for flash messages
 
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'bmp', 'webp', 'mkv', 'mp4'}
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'bmp', 'webp', 'mp4', 'webm'}
 def allowed_file(file):
     if file.filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS:
         return True
