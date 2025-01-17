@@ -8,4 +8,7 @@ Sooo... you obviously need **flask** (python library) to run it,
 once you have flask you just lunch server.py and thats it
 *tested on python 3.12.2*
 
+you can try out the site here: https://refers-available-bulletin-cult.trycloudflare.com
+just plese don't upload no weird shit...
+
 any promlems/questions welcome in the issues tab or wherever :3
