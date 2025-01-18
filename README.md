@@ -11,4 +11,4 @@ once you have flask you just lunch server.py and thats it
 You can try out the site here: https://refers-available-bulletin-cult.trycloudflare.com
 just plese don't upload no weird shit...
 
-any promlems/questions welcome in the issues tab or wherever :3
+any problems/questions/improvements welcome in the issues tab or wherever :3
