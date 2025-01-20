@@ -2,7 +2,7 @@ A very simple image library frame made with plain html, css and javaScript hoste
 Supported formats: **.png, .jpg, .jpeg, .gif, .bmp, .webp, .webm, .mp4**.
 Although displaying video formats doesn't (fully) work for now but you can add them if you want,
 also the search doesn't work yet.
-I have plans to eventually fix those issue and add support for tagging pictures
+I have plans to eventually fix those issue and add support for tagging pictures and more
 
 Sooo... you obviously need **flask** (python library) to run it,
 once you have flask you just lunch server.py and thats it
