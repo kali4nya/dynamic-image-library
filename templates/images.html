@@ -49,20 +49,27 @@
                     {% elif media.endswith(('.mp4', '.webm')) %}
                         <video src="{{ url_for('serve_image', filename=media) }}" 
                             alt="{{ media }}" 
-                            class="gallery-image"
+                            class="gallery-video"
                             controls
-                            onclick="openImagePreview('{{ url_for('serve_image', filename=media) }}', '{{ media }}')">
+                            onclick="event.stopPropagation(); openImagePreview('{{ url_for('serve_image', filename=media) }}', '{{ media }}')">
                         </video>
                     {% endif %}
                 {% endfor %}
             </div>
         </div>
         
-        <!-- Modal for full-size image preview -->
-        <div id="image-modal" class="modal" onclick="closeImagePreview()">
+            <!-- Modal for full-size image preview -->
+        <div id="image-modal" class="modal">
             <span class="close" onclick="closeImagePreview()">&times;</span>
-            <img class="modal-content" id="full-image">
-            <div id="image-id" class="image-id"></div> <!-- This will display the image ID -->
+            <span class="prev" onclick="changeMedia(-1)">&#10094;</span> <!-- Left arrow -->
+            <span class="next" onclick="changeMedia(1)">&#10095;</span>  <!-- Right arrow -->
+            
+            <div class="modal-content-container">
+                <img class="modal-content" id="full-image">
+                <video class="modal-content" id="full-video" controls></video>
+            </div>
+
+            <div id="image-id" class="image-id"></div> <!-- Displays the media filename -->
         </div>
         
         <script src="static/script.js"></script>
